@@ -5,4 +5,6 @@ describe 'Sinatra App' do
     get '/'
     last_response.should be_ok
   end
+
+  
 end
