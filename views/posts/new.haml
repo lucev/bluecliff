@@ -1,0 +1,17 @@
+%h1
+  New post
+
+%form{:action => '/posts/create', :method => 'post'}
+  %p
+    %label
+      Title
+    %input{:type => 'text', :name => 'title'}
+  %p
+    %label
+      Slug
+    %input{:type => 'text', :name => 'slug'}
+  %p
+    %label
+      Content
+    %textarea{:name => 'content'}
+  %input{:type => 'submit', :value => 'Save'}

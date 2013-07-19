@@ -1,0 +1,9 @@
+%html
+  %head
+    %title
+      = @title
+    %link{ :href => '/style.css', :rel => 'stylesheet', :type => 'text/css' }      
+  %body
+    #container
+      #content
+        = yield

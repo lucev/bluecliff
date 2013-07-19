@@ -1,0 +1,6 @@
+%h1
+  Posts
+
+- @posts.each do |post|
+  = link_to post.slug, post.title
+  %br
