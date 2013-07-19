@@ -4,6 +4,7 @@ require 'bundler'
 require 'sinatra'
 require 'data_mapper'
 require 'dm-timestamps'
+require 'dm-validations'
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/development.db")
 
@@ -36,12 +37,10 @@ class Post
   include DataMapper::Resource
 
   property  :id,          Serial
-  property  :title,       String
-  property  :slug,        String
+  property  :title,       String, :required => true
+  property  :slug,        String, :required => true, :unique => true
   property  :content,     String
   property  :created_at,  DateTime
-
-  validates_uniqueness_of :slug
 
   DataMapper.auto_upgrade!
 end
