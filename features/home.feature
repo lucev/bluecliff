@@ -2,7 +2,7 @@ Feature: view pages
 
   Scenario: view pages
     Given I am viewing "/"
-    Then I should see "Hello World!"
+    Then I should see "Posts"
 
   Scenario: page doesnt exist
     Given I am viewing "/some-url"
