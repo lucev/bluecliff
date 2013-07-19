@@ -1,0 +1,21 @@
+body {
+  background: #fff; 
+  font: 20px Hoefler Text, "Times New Roman", Times, serif;
+  color: #333;
+        line-height: 30px;
+  }
+  
+h1 {font-family: Helvetica, sans-serif; font-size: 1em; color:#333; font-weight:normal;  padding: 20px 0px 0px 0px;}
+h2 {font-family: Helvetica, sans-serif; font-size: 1.5em; color:#333; line-height:26px; font-weight:normal; padding: 5px 0px 10px 0px;}
+h3 {font-family: Helvetica, sans-serif; font-size: 18px; color:#666; line-height: 15px; text-indent: 0px; padding: 10px 0px 0px 0px;}
+h4 {font-family: Georgia, "Times New Roman", Times, serif; font-size: 1em; color:#000000;}
+h5 {font-size: 9pt; color:#000000;}
+
+p{line-height: 30px; margin:30px auto; text-indent: 0px;}
+
+#content {min-width: 20em; max-width: 30em; overflow: hidden;
+  margin-top:60px; margin-left:64px; margin-right:14px; margin-bottom:0px;}
+
+#date {text-align: left; font-size: 80%;}
+
+.signature {text-align: right; font-size: 90%; font-style: italic;}
