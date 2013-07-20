@@ -23,14 +23,19 @@ post '/posts/create' do
   redirect '/'
 end
 
-get '/:slug' do
+get '/:slug/?' do
   @post = Post.first(:slug => "#{params[:slug]}")
   if(!@post.nil?)
     haml :"posts/show"
   else
     status 404
-    body "404 page doesn't exist"
+    haml :"404"
   end
+end
+
+get '/*' do
+  status 404
+  haml :"404"
 end
 
 class Post
