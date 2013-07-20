@@ -9,7 +9,7 @@ require 'dm-validations'
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/development.db")
 
 get '/' do
-  @posts = Post.all
+  @posts = Post.all(:order => :created_at.desc)
   haml :"posts/index"
 end
 
@@ -39,7 +39,7 @@ class Post
   property  :id,          Serial
   property  :title,       String, :required => true
   property  :slug,        String, :required => true, :unique => true
-  property  :content,     String
+  property  :content,     Text
   property  :created_at,  DateTime
 
   DataMapper.auto_upgrade!

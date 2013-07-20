@@ -1,6 +1,16 @@
-%h1
-  Posts
+- if @posts.empty?
+  %h2
+    There are no posts
+- else
+  %h2
+    = @posts.first.title
+  %p
+    = @posts.first.content
 
-- @posts.each do |post|
-  = link_to post.slug, post.title
-  %br
+  %h2
+    All posts
+
+  - @posts.each do |post|
+    = post.created_at.strftime("%b %e, %Y") + ' - '
+    = link_to post.slug, post.title
+    %br
