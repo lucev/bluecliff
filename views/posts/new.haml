@@ -2,16 +2,19 @@
   New post
 
 %form{:action => '/posts/create', :method => 'post'}
-  %p
+  %div
     %label
       Title
+    %br
     %input{:type => 'text', :name => 'title'}
-  %p
+  %div
     %label
       Slug
-    %input{:type => 'text', :name => 'slug'}
-  %p
+    %br
+    %input{:type => 'text', :name => 'slug', :size => 30}
+  %div
     %label
       Content
-    %textarea{:name => 'content'}
+    %br
+    %textarea{:name => 'content', :cols => 40, :rows => 20}
   %input{:type => 'submit', :value => 'Save'}

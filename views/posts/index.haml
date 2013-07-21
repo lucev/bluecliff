@@ -1,13 +1,13 @@
 - if @posts.empty?
-  %h2
+  %h1
     There are no posts
 - else
-  %h2
+  %h1
     = @posts.first.title
   %p
     = @posts.first.content
 
-  %h2
+  %h1
     All posts
 
   - @posts.each do |post|
