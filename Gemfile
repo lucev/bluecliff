@@ -8,8 +8,9 @@ group :development, :test do
   gem 'cucumber'
   gem 'webrat'
 
-  gem 'dm-sqlite-adapter'
 end
+
+gem 'dm-sqlite-adapter'
 
 group :production do
   gem 'dm-postgres-adapter'
