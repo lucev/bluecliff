@@ -2,6 +2,7 @@ require 'rubygems'
 require 'bundler'
 require 'sinatra'
 require 'haml'
+require 'redcarpet'
 require 'data_mapper'
 require 'dm-timestamps'
 require 'dm-validations'
@@ -58,4 +59,13 @@ helpers do
     "<a href=\"#{url}\" #{attributes}>#{text}</a>"
   end
 
+  def markdown(text)
+    options = {
+      :autolink => true,
+      :space_after_headers => true,
+      :no_intra_emphasis => true
+    }
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+    markdown.render(text)
+  end
 end

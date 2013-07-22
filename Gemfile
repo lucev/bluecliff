@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'sinatra'
 gem 'data_mapper'
 gem 'haml'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'rspec'
