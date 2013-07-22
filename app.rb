@@ -6,7 +6,7 @@ require 'data_mapper'
 require 'dm-timestamps'
 require 'dm-validations'
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/development.db")
+DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_GOLD_URL'] || "sqlite3://#{Dir.pwd}/development.db")
 
 get '/' do
   @posts = Post.all(:order => :created_at.desc)
