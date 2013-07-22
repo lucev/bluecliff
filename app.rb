@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler'
-
 require 'sinatra'
+require 'haml'
 require 'data_mapper'
 require 'dm-timestamps'
 require 'dm-validations'
