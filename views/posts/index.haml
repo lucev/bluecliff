@@ -3,6 +3,8 @@
     There are no posts
 - else
   %h1
+    = link_to '/', configatron.app_name
+    = ' : '
     = @posts.first.title
   %p
     = markdown @posts.first.content
