@@ -11,7 +11,7 @@ require 'dm-validations'
 DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_GOLD_URL'] || "sqlite3://#{Dir.pwd}/development.db")
 
 project_root = File.dirname(File.absolute_path(__FILE__))
-Dir.glob(project_root + '/config/**/*.*') {|file| require file}
+Dir.glob(project_root + '/config/configatron/*.*') {|file| require file}
 
 get '/' do
   @posts = Post.all(:order => :created_at.desc)
