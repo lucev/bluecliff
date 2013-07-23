@@ -4,6 +4,7 @@ gem 'sinatra'
 gem 'data_mapper'
 gem 'haml'
 gem 'redcarpet'
+gem 'configatron'
 
 group :development, :test do
   gem 'rspec'
