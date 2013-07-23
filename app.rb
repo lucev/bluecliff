@@ -51,12 +51,12 @@ class Post
   DataMapper.auto_upgrade!
 end
 
-helpers do
+module Helpers
 
   def link_to(url,text=url,opts={})
     attributes = ""
-    opts.each { |key,value| attributes << key.to_s << value << "\" "}
-    "<a href=\"#{url}\" #{attributes}>#{text}</a>"
+    opts.each { |key,value| attributes << " " << key.to_s << "=\"" << value << "\""}
+    "<a href=\"#{url}\"#{attributes}>#{text}</a>"
   end
 
   def markdown(text)
@@ -69,3 +69,5 @@ helpers do
     markdown.render(text)
   end
 end
+
+helpers Helpers
