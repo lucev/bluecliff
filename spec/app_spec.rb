@@ -30,4 +30,9 @@ describe "link_to helper" do
     link = link_to 'http://www.example.com', 'example text', :id => 'bluecliff',:class => 'link'
     link.should match '<a href="http://www.example.com" id="bluecliff" class="link">example text</a>'
   end
+
+  it "should render link to root" do
+    link = link_to '/', 'home'
+    link.should match '<a href="/">home</a>'
+  end
 end
