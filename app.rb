@@ -18,12 +18,12 @@ Dir.glob(project_root + '/config/configatron/*.*') {|file| require file}
 
 get '/' do
   @posts = Post.all(:order => :created_at.desc)
-  @title = configatron.app_name
+  @title = title
   haml :"posts/index"
 end
 
 get '/posts/new' do
-  @title = "New post"
+  @title = title "New post"
   haml :"posts/new"
 end
 
@@ -35,7 +35,7 @@ end
 get '/:slug/?' do
   @post = Post.first(:slug => "#{params[:slug]}")
   if(!@post.nil?)
-    @title = @post.title + ' | ' + configatron.app_name
+    @title = title @post.title
     haml :"posts/show"
   else
     status 404
@@ -76,6 +76,10 @@ module Helpers
     }
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
     markdown.render(text)
+  end
+
+  def title(*title)
+    title.nil? ? "#{configatron.app_name}" : "#{title.first} | #{configatron.app_name}"
   end
 end
 
