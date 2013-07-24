@@ -32,6 +32,11 @@ post '/posts/create' do
   redirect '/'
 end
 
+get '/about/?' do
+  @title = title 'About'
+  haml :"about"
+end
+
 get '/:slug/?' do
   @post = Post.first(:slug => "#{params[:slug]}")
   if(!@post.nil?)

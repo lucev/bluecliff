@@ -8,6 +8,10 @@ Feature: view pages
     Given I am viewing "/some-url"
     Then I should see "Page doesn't exist"
 
+  Scenario: about page
+    Given I request "/about"
+    Then I should see "About"    
+
   Scenario: returning 404 status
     Given I request "/some-url"
     Then I should get response with status "404"
@@ -18,4 +22,4 @@ Feature: view pages
 
   Scenario: show post page has a title
     Given I am viewing "/my-post"
-    Then I should be on a page with title "My Post | BlueCliff"    
+    Then I should be on a page with title "My Post | BlueCliff"
