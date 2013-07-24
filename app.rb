@@ -9,6 +9,9 @@ require 'dm-timestamps'
 require 'dm-validations'
 
 DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_GOLD_URL'] || "sqlite3://#{Dir.pwd}/development.db")
+configure :test do
+  DataMapper.setup(:default, "sqlite::memory:")
+end
 
 project_root = File.dirname(File.absolute_path(__FILE__))
 Dir.glob(project_root + '/config/configatron/*.*') {|file| require file}
