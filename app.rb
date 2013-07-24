@@ -15,6 +15,7 @@ Dir.glob(project_root + '/config/configatron/*.*') {|file| require file}
 
 get '/' do
   @posts = Post.all(:order => :created_at.desc)
+  @title = configatron.app_name
   haml :"posts/index"
 end
 
@@ -31,6 +32,7 @@ end
 get '/:slug/?' do
   @post = Post.first(:slug => "#{params[:slug]}")
   if(!@post.nil?)
+    @title = @post.title + ' | ' + configatron.app_name
     haml :"posts/show"
   else
     status 404
